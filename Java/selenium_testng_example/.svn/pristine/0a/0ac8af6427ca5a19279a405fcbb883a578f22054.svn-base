@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" configfailurepolicy="continue" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="dxy.vs.base.ScreenshotListener"/>
+  </listeners>
+  <test name="VS-Back-Test(failed)">
+    <classes>
+      <class name="dxy.vs.testcase.cms.E28_topListVerify">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.cms.E28_topListVerify -->
+      <class name="dxy.vs.testcase.system.H02_manageTargetHCP">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="manageTargetHCP"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.system.H02_manageTargetHCP -->
+      <class name="dxy.vs.testcase.system.H01_siteConfig">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.system.H01_siteConfig -->
+      <class name="dxy.vs.testcase.opsdata.B007_008_viewHCP">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.opsdata.B007_008_viewHCP -->
+      <class name="dxy.vs.testcase.opsdata.B_001_002_opsDatePageDisplayAndFilter">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.opsdata.B_001_002_opsDatePageDisplayAndFilter -->
+      <class name="dxy.vs.testcase.cms.E18_19_20_manageCategory">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="manageCagegory"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.cms.E18_19_20_manageCategory -->
+      <class name="dxy.vs.testcase.template.D_05_selectTemplate">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.template.D_05_selectTemplate -->
+      <class name="dxy.vs.testcase.opsdata.B_003_viewCommentDetail">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.opsdata.B_003_viewCommentDetail -->
+      <class name="dxy.vs.testcase.opsdata.B_006_viewOpsLog">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.opsdata.B_006_viewOpsLog -->
+      <class name="dxy.vs.testcase.comment.C_002_deleteComments">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.comment.C_002_deleteComments -->
+      <class name="dxy.vs.testcase.cms.E23_to_27_manageMenu">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="manageMenu"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.cms.E23_to_27_manageMenu -->
+      <class name="dxy.vs.testcase.opsdata.B_004_viewSupportDetail">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.opsdata.B_004_viewSupportDetail -->
+      <class name="dxy.vs.testcase.comment.C_003_searchComments">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.comment.C_003_searchComments -->
+      <class name="dxy.vs.testcase.system.H03_HCPLoginLog">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.system.H03_HCPLoginLog -->
+      <class name="dxy.vs.testcase.cms.E4_5_6_manageContent">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="manageContent"/>
+        </methods>
+      </class> <!-- dxy.vs.testcase.cms.E4_5_6_manageContent -->
+    </classes>
+  </test> <!-- VS-Back-Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,66 @@
+#--------------------------------------------------------------------------------线上数据-----------------------------------------------------------------------------#
+sim_url=https://sim.dxy.cn/
+sim_url_vs=https://sim.dxy.cn/system#/wechat
+demo1_url=http://vs.dxy.cn/demo
+support_url=http://vs.dxy.cn/demo/support/rewrite
+appid=?appId=1397180681
+user=15868496245
+pw=DDxxyy456
+user2=13325815936
+pw2=Apple12345
+user3=13858008706
+pw3=DDxxyy456
+user_demo1=ddxxyyss
+pw_demo1=123ddxxyy
+loginCookie=TGT-79884-fQHfeBfDHN3GdSbJnKikvLS7kveMb5DqtvV-50
+
+category_name=Auto_Ca
+category_name_update=Ca_updated
+category_code=autocategory
+category_description=this is a discription of AutoTest_Category
+category_desc_update=this is an updated discription of AutoTest_Category
+menu_name=Auto_Menu
+menu_name_update1=Auto_updated1
+menu_name_update2=Auto_updated2
+menu_name_update3=Auto_updated3
+menu_code=automenu
+menu_place=0
+menu_url=/index
+menu_url_outside=https://www.baidu.com
+menu_url_cateogry=/case/list/rewrite/
+submenu_name=Auto_SubMenu
+submenu_code=autosubmenu
+submenu_url=/support/rewrite/
+submenu_place=0
+content_title=Auto_ContentTitle
+content_author=Auto_ContentAuthor
+content_source=Auto_ContentSource
+content_summary=Auto_ContentSummary
+content_body=This is content body for auto test!
+targetHCP_name=dxytestaccount
+targetHCP_pw=ddxxyy123
+targetHCP_searchName=test
+support_statement=test for support statement.
+searchHCP_dxyid=80c6b89b76f35df27fe1f36d7362fd0e
+searchHCP_name=ddxxyyss
+
+tag_name=auto_tagName
+tag_code=auto_tagCode
+tag_desc=this is a tag created by automation test.
+tag_name_update=auto_tagName-updated
+tag_desc_update=this is a tag created by automation test-updated
+subTag_name=auto_subTagName
+subTag_desc=this is a sub-tag created by automation test.
+subTag_name_update=auto_subTagName-updated
+subTag_desc_update=this is a sub-tag created by automation test-updated
+
+examTitle=Auto_ExamTitle
+examFeedback=Auto_Feedback: Thank you!
+quesTitle=Auto_QuestionTitle
+option1=This is option1.
+option2=This is option2.
+option3=This is option3.
+option4=This is option4.
+option5=This is option5.
+option6=This is option6.
+option7=This is option7.

@@ -1,0 +1,36 @@
+package dxy.vs.testcase.opsdata;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.OpsDataPage;
+import dxy.vs.pages.OpsDetail_CommentPage;
+
+public class B_003_viewCommentDetail extends SetUp{
+	
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	OpsDataPage opsDataPage;
+	OpsDetail_CommentPage opsDetail_CommentPage;	
+		
+	@Test
+	public void viewCommentDetail() throws Exception{
+		
+		opsDataPage = PageFactory.initElements(threadDriver.get(), OpsDataPage.class);
+		opsDetail_CommentPage = PageFactory.initElements(threadDriver.get(), OpsDetail_CommentPage.class);
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		
+		reusableFunctions.login(0);
+		
+		opsDataPage.openOpsDataManagePage();
+		
+		opsDetail_CommentPage.verifyDetail_DeletedComment();
+		
+		String status[] = {"未处理","已回复"};
+		for(String eachStatus: status) {
+			opsDetail_CommentPage.verifyDetail_Comment(eachStatus);
+		}
+	}
+}

@@ -1,0 +1,42 @@
+package dxy.vs.testcase.opsdata;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.OpsDataPage;
+
+public class B_001_002_opsDatePageDisplayAndFilter extends SetUp{
+
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	OpsDataPage opsDataPage;
+	
+	@Test
+	public void opsDatePageDisplay() throws Exception{
+		
+		opsDataPage = PageFactory.initElements(threadDriver.get(), OpsDataPage.class);
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		
+		reusableFunctions.login(0);
+		
+		opsDataPage.openOpsDataManagePage();
+		
+		opsDataPage.verifyOpsDataManagePageDisplay();
+		
+		opsDataPage.filterOps_time();
+		
+		String types[] = {"赞","评分","评论","支持请求","视频"};
+		for(String eachType: types) {
+			opsDataPage.filterOps_type("类型",eachType);
+		}
+		
+		String status[] = {"未处理","已提交客户","已回复","客户处理中","完成","无效"};
+		for(String eachStatus: status) {
+			opsDataPage.filterOps_type("状态",eachStatus);
+		}
+		
+		
+	}
+}

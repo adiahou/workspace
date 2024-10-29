@@ -1,0 +1,66 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import dxy.vs.base.SetUp;
+
+public class Report_MonthlyReportPage extends SetUp{
+
+	@FindBy(xpath="//span[text()='报表系统']")
+	public WebElement menu_reportSystem;
+	
+	@FindBy(xpath="//a[contains(text(),'常用报表')]")
+	public WebElement submenu_monthlyReport;
+	
+	@FindBy(xpath=".//input[@value='查看报表']")
+	public WebElement btn_submit;
+
+	@FindBy(xpath="//section[@class='content-header']/h1")
+	public WebElement pageTitle;
+
+	@FindBy(xpath=".//*[@id='tp-month']/div/canvas[8]")
+	public WebElement report_day;
+
+	@FindBy(xpath=".//*[@id='tp-device']/div/canvas[7]")
+	public WebElement report_device;
+
+	@FindBy(xpath=".//*[@id='tp-browser']/div/canvas[7]")
+	public WebElement report_browser;
+
+	@FindBy(xpath=".//*[@id='tp-department']/div/canvas[7]")
+	public WebElement report_department;
+
+	@FindBy(xpath=".//*[@id='tp-city']/div/canvas[9]")
+	public WebElement report_city;
+
+	@FindBy(xpath=".//*[@id='tp-content']/div/canvas[7]")
+	public WebElement report_content;
+
+	@FindBy(xpath=".//*[@id='tp-tag']/div/canvas[7]")
+	public WebElement report_tag;
+
+
+	
+	
+	 public  void openMonthlyReportPage() throws Exception{
+			
+		//点击运维数据菜单
+		 menu_reportSystem.click();
+		Thread.sleep(1000);
+		submenu_monthlyReport.click();
+		
+		//wait for search fields display
+		waitForPageLoadComplete();
+		waitForElementExist(btn_submit);
+		
+		assertTrue("页面标题错误",pageTitle.getText().contains("常用报表"));
+	}
+	 
+	 public  void verifyMonthlyReportPage(){
+		 
+	 }
+	 
+}

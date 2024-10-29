@@ -1,0 +1,30 @@
+package dxy.vs.testcase.template;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.Template_ManageColorPage;
+
+public class D_06_manageColor  extends SetUp{
+	
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	Template_ManageColorPage manageColorPage;
+	
+	@Test
+	public void manageColor() throws Exception{
+		
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		manageColorPage = PageFactory.initElements(threadDriver.get(), Template_ManageColorPage.class);
+		
+		reusableFunctions.enterVS(0);
+		
+		manageColorPage.openManageColorPage();
+		manageColorPage.clearOldData();
+		manageColorPage.newColor();
+		manageColorPage.editColor();
+		manageColorPage.clearOldData();
+	}
+}

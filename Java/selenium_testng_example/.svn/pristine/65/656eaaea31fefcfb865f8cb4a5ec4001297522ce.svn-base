@@ -1,0 +1,55 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import dxy.vs.base.SetUp;
+
+public class OpsViewHCPPage extends SetUp{
+
+	@FindBy(xpath="//span[text()='运营管理']")
+	public WebElement menu_ops;
+	
+	@FindBy(xpath="//a[contains(text(),'HCP互动数据')]")
+	public WebElement submenu_viewHCP;
+
+	@FindBy(xpath="//section[@class='content-header']/h1")
+	public WebElement pageTitle;
+	
+	@FindBy(xpath="//span[contains(text(),'下一页')]")
+	public WebElement btn_next;
+
+	@FindBy(xpath="//span[contains(text(),'上一页')]")
+	public WebElement btn_previous;
+
+	@FindBy(xpath="//span[contains(text(),'首页')]")
+	public WebElement btn_first;
+
+	@FindBy(xpath="//span[contains(text(),'末页')]")
+	public WebElement btn_last;
+
+	@FindBy(xpath=".//*[@id='opdata-list']/tbody/tr[1]/td[2]")
+	public WebElement content_table;
+	
+	
+	
+	
+
+	 public  void openOpsLogPage() throws Exception{
+		
+		//点击运维数据菜单
+		menu_ops.click();
+		Thread.sleep(1000);
+		submenu_viewHCP.click();
+		
+		waitForPageLoadComplete();
+		waitForElementExist(pageTitle);
+		
+		assertTrue("页面标题错误",pageTitle.getText().contains("HCP互动数据"));
+	}
+	
+	
+	
+}

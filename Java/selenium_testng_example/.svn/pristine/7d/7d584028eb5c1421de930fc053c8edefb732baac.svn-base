@@ -1,0 +1,47 @@
+package dxy.vs.testcase.system;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.DashboardPage;
+import dxy.vs.pages.SimPage;
+import dxy.vs.pages.UserManagePage;
+
+public class H06_permissionTest_3DXYAdmin extends SetUp{
+
+	SimPage simPage;
+	ReusableFunctions reusableFunctions;
+	UserManagePage userManagePage;
+	DashboardPage dashboardPage;
+	
+//	@Test
+	public void setUserPermission_DXYAdmin() throws Exception{
+		simPage = PageFactory.initElements(threadDriver.get(), SimPage.class);
+		int DXYPermissionGroup[]={470,517,474,465,466,467,468,469,471,472,478,479,480,481,482,491,492,499,501,515,516,523,522,525};
+		
+		simPage.accessToPermissionConfig();
+		simPage.selectDesirePermission(DXYPermissionGroup);
+	}
+	
+//	@Test
+	public void refreshPermission() throws Exception{
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		userManagePage = PageFactory.initElements(threadDriver.get(), UserManagePage.class);
+		
+		reusableFunctions.enterVS(p("user3"), p("pw3"));
+		userManagePage.openAndRefreshUserPermission();
+	}
+	
+//	@Test
+//	(dependsOnMethods = {"setUserPermission_DXYAdmin","refreshPermission"})
+	public void verifyPermission_DXYAdmin() throws Exception{
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		dashboardPage = PageFactory.initElements(threadDriver.get(), DashboardPage.class);
+		
+		reusableFunctions.enterVS(p("user2"), p("pw2"));
+		dashboardPage.selectOneSite("简洁模板");
+		
+	}	
+}

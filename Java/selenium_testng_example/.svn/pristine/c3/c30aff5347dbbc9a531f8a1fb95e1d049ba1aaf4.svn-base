@@ -1,0 +1,120 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import dxy.vs.base.SetUp;
+
+public class Template_ManageColorPage extends SetUp{
+
+	@FindBy(xpath="//span[text()='模板系统']/../..")
+	public WebElement menu_Template;
+
+	@FindBy(xpath="//a[contains(text(),'色系管理')]")
+	public WebElement submenu_manageColor;
+
+	@FindBy(xpath="//section[@class='content-header']/h1")
+	public WebElement pageTitle;
+
+	@FindBy(xpath="//a[text()='新增']")
+	public WebElement btn_new;
+
+	@FindBy(xpath="//table[contains(@class,'sheet')]/tbody/tr/td[2]")
+	public List<WebElement> value_name;
+
+	@FindBy(xpath="//table[contains(@class,'sheet')]//a[text()='删除']")
+	public List<WebElement> link_delete;
+	
+	/*******************************************************************new edit page******************************************************************/
+	@FindBy(xpath="//button[contains(@class,'J_content_confirm')]")
+	public WebElement btn_yes;
+	
+	@FindBy(xpath="//*[@id='share-element']/label")
+	public List<WebElement> option_template;
+
+	@FindBy(id="name")
+	public WebElement input_name;
+	
+	@FindBy(xpath="//section[@class='content']//input[@id='submit']")
+	public WebElement btn_submit;
+	
+	@FindBy(xpath="//li[contains(text(),'Value is required')]")
+	public List<WebElement> msg_required;
+
+	@FindBy(xpath="//div[contains(@class,'field-box')]//input[contains(@id,'color') and @value='']")
+	public List<WebElement> input_colors;
+	
+	
+	
+	 public  void openManageColorPage() throws Exception{
+			
+		 if(!menu_Template.getAttribute("class").contains("active")){
+			 menu_Template.click();
+				Thread.sleep(1000);
+		 }
+		 submenu_manageColor.click();
+		waitForPageLoadComplete();
+		waitForElementExist(pageTitle);
+		
+		assertTrue("页面标题错误",pageTitle.getText().contains("色系管理"));  
+	}
+
+	 public void newColor() throws Exception{
+		 btn_new.click();
+		 waitForPageLoadComplete();
+		 waitForElementExist(btn_yes);
+		 
+		 option_template.get(0).click();
+		 btn_yes.click();
+		 waitForPageLoadComplete();
+		 waitForElementExist(btn_submit);
+		 
+		 //验证必填效验
+		 btn_submit.click();
+		 assertTrue("Error: require message is not display!",msg_required.size()==26);
+		 
+		 //输入各项值
+		 input_name.sendKeys("Auto_newColor");
+		 for(WebElement eachColor:input_colors){
+			 eachColor.click();
+			 Thread.sleep(500);
+		 }
+		 btn_submit.click();
+		 waitForPageLoadComplete();
+		 waitForElementExist(btn_new);
+	 }
+	 
+	 public void editColor() throws Exception{
+		//打开指定色系编辑页面
+		int desiredRow = Integer.parseInt(getNodeNo(value_name,"Auto_"))+1;
+		WebElement btn_edit = driver.findElement(By.xpath("//table[contains(@class,'sheet')]/tbody/tr["+desiredRow+"]/td/a[text()='编辑']"));
+		 
+		btn_edit.click();
+		waitForPageLoadComplete();
+		
+		input_name.clear();
+		input_name.sendKeys("Auto_updateColor");
+		 
+		btn_submit.click();
+		waitForPageLoadComplete();
+		waitForElementExist(btn_new);
+	 }
+	 
+	 public  void clearOldData() throws Exception{
+		 for(int i=value_name.size()-1;i>-1;i--){
+				if(value_name.get(i).getText().contains("Auto_")){
+					link_delete.get(i).click();
+					Thread.sleep(500);
+					clickFromAlert("yes");
+					Thread.sleep(500);
+					waitForPageLoadComplete();
+				}
+			}
+	 }
+	 
+}

@@ -1,0 +1,59 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.SetUp;
+
+public class OpsDetail_SupportPage extends SetUp{
+
+
+	//支持请求详情表
+	@FindBy(xpath="//dl[@class='vertical-list']")
+	public WebElement form_supportFields;
+	
+	//未处理选项
+	@FindBy(xpath=".//*[@id='status']/option[text()='未处理']")
+	public WebElement option_untreaded;
+	
+	
+	
+	//Initialize Pages
+	OpsDataPage opsDataPage;
+
+	public void verifyDetail_UntreatedSupport() throws Exception {
+		
+		opsDataPage = PageFactory.initElements(threadDriver.get(), OpsDataPage.class);
+		
+		//重置清空搜索条件
+		opsDataPage.btn_clear.click();
+		Thread.sleep(1000);
+						
+		//搜索
+		opsDataPage.option_support.click();
+		opsDataPage.option_new.click();
+		opsDataPage.btn_search.click();
+		waitForPageLoadComplete();	
+
+		if(opsDataPage.links_view.size()>0){		
+			//点击浏览链接
+			opsDataPage.links_view.get(0).click();
+			waitForPageLoadComplete();	
+			waitForElementExist(form_supportFields);
+			
+			//验证状态为“未处理”
+			assertTrue("支持请求详细页状态非‘未处理’。",option_untreaded.getAttribute("selected").trim().equals("true"));
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+}

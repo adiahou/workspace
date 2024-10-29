@@ -1,0 +1,264 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.SetUp;
+
+public class System_ManageSite extends SetUp{
+
+	@FindBy(xpath="//span[text()='系统管理']")
+	public WebElement menu_system;
+
+	@FindBy(xpath="//a[contains(text(),'站点管理')]")
+	public WebElement submenu_manageSite;
+
+	@FindBy(xpath="//section[@class='content-header']/h1")
+	public WebElement pageTitle;
+	
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[1]")
+	public List<WebElement> values_name;
+	
+	/**************************************************************************站点配置页面******************************************************************************/
+	
+	@FindBy(xpath="//a[text()='常规']/..")
+	public WebElement tag_regular;
+	
+	@FindBy(xpath="//a[text()='首页和内页']/..")
+	public WebElement tag_page;
+	
+	@FindBy(xpath="//a[text()='支持请求']/..")
+	public WebElement tag_support;
+
+	@FindBy(xpath="//section[@class='content']//input[@id='submit']")
+	public WebElement btn_submit;
+
+	/*************常规标签页************/
+	@FindBy(xpath=".//*[@id='name']")
+	public WebElement input_name;
+
+	@FindBy(xpath=".//*[@id='keyword']")
+	public WebElement input_keyword;
+
+	@FindBy(xpath=".//*[@id='online_date']")
+	public WebElement input_onlineDate;
+
+	@FindBy(xpath=".//*[@id='landing_statement']")
+	public WebElement input_landStatement;
+
+	@FindBy(xpath=".//*[@id='background_image_landing_page']")
+	public WebElement input_landImage;
+
+	@FindBy(xpath=".//*[@id='leave_statement']")
+	public WebElement input_leaveStatement;
+
+	@FindBy(xpath=".//*[@id='redirect_url']")
+	public WebElement input_redirectUrl;
+
+	@FindBy(xpath=".//*[@id='background_image_leave_page']")
+	public WebElement input_leaveImage;
+
+	@FindBy(xpath=".//*[@id='header_logo']")
+	public WebElement input_headerLogo;
+
+	@FindBy(xpath=".//*[@id='footer_logo']")
+	public WebElement input_footerLogo;
+
+	@FindBy(xpath=".//*[@id='footer_statement']")
+	public WebElement input_footerStatement;
+
+	@FindBy(xpath=".//*[@id='target_hcp_number']")
+	public WebElement input_hcpNo;
+
+	@FindBy(xpath=".//*[@id='target_hcp_visit']")
+	public WebElement input_hcpVisit;
+
+	@FindBy(xpath=".//*[@id='hcp_license']")
+	public WebElement input_hcpLicense;
+
+	@FindBy(xpath=".//*[@id='email']")
+	public WebElement input_email;
+
+	@FindBy(xpath=".//*[@id='wechat_title']")
+	public WebElement input_wechat_title;
+
+	@FindBy(xpath=".//*[@id='wechat_summary']")
+	public WebElement input_wechat_summary;
+	
+	/*************首页和内页标签页************/
+
+	@FindBy(xpath=".//*[@id='background_image_front_page']")
+	public WebElement input_frontImage;
+
+	@FindBy(xpath=".//*[@id='slide1']")
+	public WebElement input_slide1;
+
+	@FindBy(xpath=".//*[@id='slide_url1']")
+	public WebElement input_slideUrl1;
+
+	@FindBy(xpath=".//*[@id='slide2']")
+	public WebElement input_slide2;
+
+	@FindBy(xpath=".//*[@id='slide_url2']")
+	public WebElement input_slideUrl2;
+
+	@FindBy(xpath=".//*[@id='slide3']")
+	public WebElement input_slide3;
+
+	@FindBy(xpath=".//*[@id='slide_url3']")
+	public WebElement input_slideUrl3;
+
+	@FindBy(xpath=".//*[@id='slide4']")
+	public WebElement input_slide4;
+
+	@FindBy(xpath=".//*[@id='slide_url4']")
+	public WebElement input_slideUrl4;
+
+	@FindBy(xpath=".//*[@id='mobile_slide1']")
+	public WebElement input_mobileSlide1;
+
+	@FindBy(xpath=".//*[@id='mobile_slide_url1']")
+	public WebElement input_mobileSlideUrl1;
+
+	@FindBy(xpath=".//*[@id='mobile_slide2']")
+	public WebElement input_mobileSlide2;
+
+	@FindBy(xpath=".//*[@id='mobile_slide_url2']")
+	public WebElement input_mobileSlideUrl2;
+
+	@FindBy(xpath=".//*[@id='mobile_slide3']")
+	public WebElement input_mobileSlide3;
+
+	@FindBy(xpath=".//*[@id='mobile_slide_url3']")
+	public WebElement input_mobileSlideUrl3;
+
+	@FindBy(xpath=".//*[@id='mobile_slide4']")
+	public WebElement input_mobileSlide4;
+
+	@FindBy(xpath=".//*[@id='mobile_slide_url4']")
+	public WebElement input_mobileSlideUrl4;
+
+	@FindBy(xpath=".//*[@id='background_image_page']")
+	public WebElement input_pageImage;
+
+	/*************支持请求标签页************/
+	@FindBy(xpath=".//*[@id='support_options']")
+	public WebElement input_supportOptions;
+
+	@FindBy(xpath="//label[text()='显示其它选项']")
+	public WebElement input_isOther;
+
+	@FindBy(xpath=".//*[@id='tab-site-config-tabpane-support']/div[2]/div/label/div")
+	public List<WebElement> option_isOther;
+
+	@FindBy(xpath=".//*[@id='support_statement']")
+	public WebElement input_supportStatement;
+
+	
+	
+	Front_Demo1Page front_Demo1Page = PageFactory.initElements(threadDriver.get(), Front_Demo1Page.class);
+	
+
+	 public  void openSiteManagePage() throws Exception{
+		
+		//点击系统管理菜单
+		menu_system.click();
+		Thread.sleep(1000);
+		submenu_manageSite.click();
+		
+		waitForPageLoadComplete();
+		waitForElementExist(pageTitle);
+		
+		//验证页面显示
+		assertTrue("页面标题错误",pageTitle.getText().contains("站点管理"));
+	}
+	
+
+	 public  void verifySiteConfigPage() throws Exception{
+		
+		String desiredRow = getNodeNo(values_name,"标准模板 Demo");
+		WebElement btn_config = driver.findElement(By.xpath(".//*[@id='project-list']/tbody/tr["+desiredRow+"]/td[4]/a[text()='配置']"));
+		
+		btn_config.click();
+		waitForPageLoadComplete();
+
+		//验证页面显示
+		assertTrue("页面标题错误",pageTitle.getText().contains("配置站点"));
+		//验证常规标签页字段
+		assertTrue(tag_regular.getAttribute("class").trim().equalsIgnoreCase("active"));
+		assertTrue(isElementExist(input_name));
+		assertTrue(isElementExist(input_keyword));
+		assertTrue(isElementExist(input_onlineDate));
+		assertTrue(isElementExist(input_landStatement));
+		assertTrue(isElementExist(input_landImage));
+		assertTrue(isElementExist(input_leaveStatement));
+		assertTrue(isElementExist(input_leaveStatement));
+		assertTrue(isElementExist(input_redirectUrl));
+		assertTrue(isElementExist(input_leaveImage));
+		assertTrue(isElementExist(input_headerLogo));
+		assertTrue(isElementExist(input_footerLogo));
+		assertTrue(isElementExist(input_footerStatement));
+		assertTrue(isElementExist(input_hcpNo));
+		assertTrue(isElementExist(input_hcpVisit));
+		assertTrue(isElementExist(input_hcpLicense));
+		assertTrue(isElementExist(input_email));
+		assertTrue(isElementExist(input_wechat_title));
+		assertTrue(isElementExist(input_wechat_summary));
+		
+		//验证首页和内页字段
+		tag_page.click();
+		Thread.sleep(3000);
+		assertTrue(isElementExist(input_frontImage));
+		assertTrue(isElementExist(input_slide1));
+		assertTrue(isElementExist(input_slideUrl1));
+		assertTrue(isElementExist(input_slide2));
+		assertTrue(isElementExist(input_slideUrl2));
+		assertTrue(isElementExist(input_slide3));
+		assertTrue(isElementExist(input_slideUrl3));
+		assertTrue(isElementExist(input_slide4));
+		assertTrue(isElementExist(input_slideUrl4));
+		assertTrue(isElementExist(input_mobileSlide1));
+		assertTrue(isElementExist(input_mobileSlideUrl1));
+		assertTrue(isElementExist(input_mobileSlide2));
+		assertTrue(isElementExist(input_mobileSlideUrl2));
+		assertTrue(isElementExist(input_mobileSlide3));
+		assertTrue(isElementExist(input_mobileSlideUrl3));
+		assertTrue(isElementExist(input_mobileSlide4));
+		assertTrue(isElementExist(input_mobileSlideUrl4));
+		assertTrue(isElementExist(input_pageImage));
+		
+		//验证支持请求字段
+		tag_support.click();
+		Thread.sleep(3000);
+		assertTrue(isElementExist(input_supportOptions));
+		assertTrue(isElementExist(input_isOther));
+		assertTrue(isElementExist(input_supportStatement));
+		
+		//验证支持请求配置
+		input_supportOptions.clear();
+		input_supportOptions.sendKeys("A"+"\n"+"B"+"\n"+"C"+"\n"+"D"+"\n"+"E");
+		option_isOther.get(0).click();
+		input_supportStatement.clear();
+		input_supportStatement.sendKeys(p("support_statement"));
+		
+		btn_submit.click();
+		waitForPageLoadComplete();
+		
+		//发布
+		List<WebElement> btn_publish = driver.findElements(By.xpath(".//*[@id='project-list']/tbody/tr["+desiredRow+"]/td[4]/a[text()='发布']"));
+		assertTrue(btn_publish.size()==1);
+		btn_publish.get(0).click();
+		waitForPageLoadComplete();
+		
+		//前台验证
+		front_Demo1Page.openDemo1Page();
+		front_Demo1Page.verifySupport();
+	}
+
+}

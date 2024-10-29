@@ -1,0 +1,107 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import dxy.vs.base.SetUp;
+
+public class Exam_ManageQuestionPage extends SetUp{
+
+	@FindBy(xpath="//span[text()='答题系统']/../..")
+	public WebElement menu_Exam;
+
+	@FindBy(xpath="//a[contains(text(),'题库管理')]")
+	public WebElement submenu_manageQuestion;
+
+	@FindBy(xpath="//section[@class='content-header']/h1")
+	public WebElement pageTitle;
+
+	@FindBy(xpath="//a[text()='新增']")
+	public WebElement btn_new;
+
+	@FindBy(xpath=".//*[@id='type-element']/label")
+	public List<WebElement> option_type;
+
+	@FindBy(xpath=".//*[@id='type-element']/label")
+	public List<WebElement> option_isRequired;
+
+	@FindBy(xpath=".//*[@id='mode_id']")
+	public WebElement dropdown_mode;
+
+	@FindBy(xpath="//input[contains(@id,'answer')]")
+	public List<WebElement> input_options;
+
+	@FindBy(xpath=".//*[@id='weight']")
+	public WebElement input_sequence;
+
+	@FindBy(xpath=".//*[@id='question']")
+	public WebElement input_title;
+	
+	@FindBy(xpath=".//*[@id='submitbutton']")
+	public WebElement btn_save;
+	
+	
+	 public  void openManageQuestionPage() throws Exception{
+			
+		 if(!menu_Exam.getAttribute("class").contains("active")){
+			 menu_Exam.click();
+				Thread.sleep(1000);
+		 }
+		 submenu_manageQuestion.click();
+		waitForPageLoadComplete();
+		waitForElementExist(pageTitle);
+		
+		assertTrue("页面标题错误",pageTitle.getText().contains("题库管理"));
+	}
+	 
+	 public  void creatQuestion(String type,boolean isRequired,String squ) throws Exception{
+		 btn_new.click();
+		 waitForPageLoadComplete();
+		 waitForElementExist(btn_save);
+		 
+		 String title=p("quesTitle");
+		 
+		 if(type.equals("单选")){
+			 title=title+"_单选";
+			 option_type.get(0).click();
+		 }else if(type.equals("多选")){
+			 title=title+"_多选";
+			 option_type.get(1).click();
+		 }
+		 
+		 if(isRequired){
+			 title=title+"_必填";
+			 option_isRequired.get(1).click();
+		 }else{
+			 title=title+"_选填";
+			 option_isRequired.get(0).click();
+		 }
+		 
+		 WebElement mode = driver.findElement(By.xpath(".//*[@id='mode_id']/option[contains(text(),'"+p("examTitle")+"')]"));
+		 mode.click();
+		 
+		 input_options.get(0).sendKeys(p("option1"));
+		 input_options.get(1).sendKeys(p("option2"));
+		 input_options.get(2).sendKeys(p("option3"));
+		 input_options.get(3).sendKeys(p("option4"));
+		 input_options.get(4).sendKeys(p("option5"));
+		 input_options.get(5).sendKeys(p("option6"));
+		 input_options.get(6).sendKeys(p("option7"));
+		 
+		 input_sequence.clear();
+		 input_sequence.sendKeys(squ);
+		 
+		 title=squ+" "+title;
+		 input_title.clear();
+		 input_title.sendKeys(title);
+		 
+		 btn_save.click();
+		 waitForPageLoadComplete();
+		 waitForElementExist(btn_new);
+	 }
+}

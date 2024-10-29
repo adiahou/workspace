@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false" thread-count="1"
+	configfailurepolicy="continue">
+
+	<listeners>
+		<listener class-name="vs.base.ScreenshotListener" />
+	</listeners>
+
+
+	<test name="VS-Back-Test">
+	    <parameter name="browserFlag" value="1" />
+	    
+		<packages>
+			<package name="vs.testcase.cms" /> 
+			<package name="vs.testcase.system" />  
+		</packages>
+
+		<!--
+		<classes>	       
+			<class name="vs.testcase.cms.E23_to_27_manageMenu"></class>	  
+			<class name="vs.testcase.cms.E29_manageVideo"></class>	  
+			<class name="vs.testcase.cms.E4_5_6_manageContent"></class>	     
+			<class name="vs.testcase.system.H02_manageTargetHCP"></class>	  
+			<class name="vs.testcase.system.H06_permissionTest_1Empty"></class>	      
+			<class name="vs.testcase.system.H06_permissionTest_2ClientAdmin"></class>	   
+			<class name="vs.testcase.system.H06_permissionTest_3DXYAdmin"></class>	   
+			<class name="vs.testcase.system.H06_permissionTest_4Others"></class>	    
+			
+		</classes>
+		 -->
+	</test>
+	
+</suite>

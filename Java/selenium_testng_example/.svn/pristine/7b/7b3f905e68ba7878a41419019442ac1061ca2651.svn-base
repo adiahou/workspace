@@ -1,0 +1,51 @@
+package dxy.vs.testcase.cms;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.CMS_ManageMenuPage;
+
+public class E23_to_27_manageMenu extends SetUp{
+
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	CMS_ManageMenuPage cMS_ManageMenuPage;
+	
+	@Test
+	public void createMenu() throws Exception{
+
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		cMS_ManageMenuPage = PageFactory.initElements(threadDriver.get(), CMS_ManageMenuPage.class);
+		
+		reusableFunctions.login(0);
+		
+		cMS_ManageMenuPage.openMenuManagePage();
+		
+		cMS_ManageMenuPage.clearOldData();
+		
+		cMS_ManageMenuPage.newMenu();
+		
+		cMS_ManageMenuPage.publishMenu(p("menu_code"), p("menu_name"), null,true,false);
+		
+		cMS_ManageMenuPage.verifyOutMenu("https://vs.sim.dxy.cn/admin/menu");
+		
+		cMS_ManageMenuPage.editMenu_newWindow(p("menu_code"));
+
+		cMS_ManageMenuPage.editMenu_notNewWindow(p("menu_code"));
+		
+		cMS_ManageMenuPage.editMenu_enable(p("menu_code"),false);
+
+		cMS_ManageMenuPage.editMenu_enable(p("menu_code"),true);
+
+		cMS_ManageMenuPage.newSubMenu(p("menu_code"));
+		
+		cMS_ManageMenuPage.publishSubMenu();
+		
+		cMS_ManageMenuPage.deleteMenu(p("submenu_code"), p("menu_name_update3"), p("submenu_name"));
+		
+		cMS_ManageMenuPage.deleteMenu(p("menu_code"), p("menu_name_update3"),null);
+	}
+	
+}

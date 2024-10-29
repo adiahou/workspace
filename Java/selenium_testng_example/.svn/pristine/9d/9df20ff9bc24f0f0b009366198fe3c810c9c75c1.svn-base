@@ -1,0 +1,94 @@
+<h2>Methods run, sorted chronologically</h2><h3>&gt;&gt; means before, &lt;&lt; means after</h3><p/><br/><em>Suite</em><p/><small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table border="1">
+<tr><th>Time</th><th>Delta (ms)</th><th>Suite<br>configuration</th><th>Test<br>configuration</th><th>Class<br>configuration</th><th>Groups<br>configuration</th><th>Method<br>configuration</th><th>Test<br>method</th><th>Thread</th><th>Instances</th></tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:07:40</td>   <td>0</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.cms.E18_19_20_manageCategory@34a281e7]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="84928c">  <td>15/06/23 12:07:43</td>   <td>3113</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="E18_19_20_manageCategory.manageCagegory()[pri:0, instance:dxy.vs.testcase.cms.E18_19_20_manageCategory@34a281e7]">manageCagegory</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:08:10</td>   <td>30873</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.cms.E18_19_20_manageCategory@34a281e7]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:08:13</td>   <td>33087</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.comment.C_002_deleteComments@7abb96c5]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="777cd1">  <td>15/06/23 12:08:15</td>   <td>35864</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="C_002_deleteComments.deleteComments()[pri:0, instance:dxy.vs.testcase.comment.C_002_deleteComments@7abb96c5]">deleteComments</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:08:49</td>   <td>69207</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.comment.C_002_deleteComments@7abb96c5]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:08:51</td>   <td>71490</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.opsdata.B007_008_viewHCP@5b36cbd0]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="7d8287">  <td>15/06/23 12:08:54</td>   <td>74723</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="B007_008_viewHCP.viewSupportDetail()[pri:0, instance:dxy.vs.testcase.opsdata.B007_008_viewHCP@5b36cbd0]">viewSupportDetail</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:09:22</td>   <td>102440</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.opsdata.B007_008_viewHCP@5b36cbd0]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:09:24</td>   <td>104690</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.system.H01_siteConfig@22a668fd]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="a47db6">  <td>15/06/23 12:09:27</td>   <td>107639</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="H01_siteConfig.opsDatePageDisplay()[pri:0, instance:dxy.vs.testcase.system.H01_siteConfig@22a668fd]">opsDatePageDisplay</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:10:28</td>   <td>168817</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.system.H01_siteConfig@22a668fd]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:10:31</td>   <td>171124</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.template.D_05_selectTemplate@18fe7fb0]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="aa8e75">  <td>15/06/23 12:10:34</td>   <td>174456</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="D_05_selectTemplate.selectTemplateVerify()[pri:0, instance:dxy.vs.testcase.template.D_05_selectTemplate@18fe7fb0]">selectTemplateVerify</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:11:16</td>   <td>216721</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.template.D_05_selectTemplate@18fe7fb0]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:11:19</td>   <td>218999</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.cms.E23_to_27_manageMenu@73946e71]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="6fb284">  <td>15/06/23 12:11:21</td>   <td>221886</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="E23_to_27_manageMenu.manageMenu()[pri:0, instance:dxy.vs.testcase.cms.E23_to_27_manageMenu@73946e71]">manageMenu</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:12:27</td>   <td>287538</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.cms.E23_to_27_manageMenu@73946e71]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:12:29</td>   <td>289845</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.comment.C_003_searchComments@616b9190]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="9f9f90">  <td>15/06/23 12:12:33</td>   <td>292906</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="C_003_searchComments.searchComments()[pri:0, instance:dxy.vs.testcase.comment.C_003_searchComments@616b9190]">searchComments</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:13:05</td>   <td>325578</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.comment.C_003_searchComments@616b9190]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:13:07</td>   <td>327822</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.opsdata.B_001_002_opsDatePageDisplayAndFilter@6a7ef378]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="90beb5">  <td>15/06/23 12:13:10</td>   <td>330639</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="B_001_002_opsDatePageDisplayAndFilter.opsDatePageDisplay()[pri:0, instance:dxy.vs.testcase.opsdata.B_001_002_opsDatePageDisplayAndFilter@6a7ef378]">opsDatePageDisplay</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:15:30</td>   <td>470198</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.opsdata.B_001_002_opsDatePageDisplayAndFilter@6a7ef378]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:15:32</td>   <td>472455</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.system.H02_manageTargetHCP@338fc07d]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="8dbbab">  <td>15/06/23 12:15:35</td>   <td>475287</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="H02_manageTargetHCP.manageTargetHCP()[pri:0, instance:dxy.vs.testcase.system.H02_manageTargetHCP@338fc07d]">manageTargetHCP</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:16:05</td>   <td>505654</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.system.H02_manageTargetHCP@338fc07d]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:16:08</td>   <td>507933</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.cms.E28_topListVerify@37d5fc3d]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="8ef2d7">  <td>15/06/23 12:16:10</td>   <td>510892</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="E28_topListVerify.verifyTopList()[pri:0, instance:dxy.vs.testcase.cms.E28_topListVerify@37d5fc3d]">verifyTopList</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:16:57</td>   <td>557447</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.cms.E28_topListVerify@37d5fc3d]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:16:59</td>   <td>559726</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.opsdata.B_003_viewCommentDetail@6c7108a1]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="76756c">  <td>15/06/23 12:17:02</td>   <td>562843</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="B_003_viewCommentDetail.viewCommentDetail()[pri:0, instance:dxy.vs.testcase.opsdata.B_003_viewCommentDetail@6c7108a1]">viewCommentDetail</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:18:03</td>   <td>623622</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.opsdata.B_003_viewCommentDetail@6c7108a1]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:18:05</td>   <td>625887</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.system.H03_HCPLoginLog@506f2775]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="a766b0">  <td>15/06/23 12:18:10</td>   <td>630830</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="H03_HCPLoginLog.manageTargetHCP()[pri:0, instance:dxy.vs.testcase.system.H03_HCPLoginLog@506f2775]">manageTargetHCP</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:18:56</td>   <td>676288</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.system.H03_HCPLoginLog@506f2775]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:18:58</td>   <td>678537</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.cms.E4_5_6_manageContent@5d21b6e7]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="bbab8f">  <td>15/06/23 12:19:01</td>   <td>681341</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="E4_5_6_manageContent.manageContent()[pri:0, instance:dxy.vs.testcase.cms.E4_5_6_manageContent@5d21b6e7]">manageContent</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:20:03</td>   <td>743611</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.cms.E4_5_6_manageContent@5d21b6e7]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:20:05</td>   <td>745876</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.opsdata.B_004_viewSupportDetail@15def7ff]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="a0a16a">  <td>15/06/23 12:20:09</td>   <td>749194</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="B_004_viewSupportDetail.viewSupportDetail()[pri:0, instance:dxy.vs.testcase.opsdata.B_004_viewSupportDetail@15def7ff]">viewSupportDetail</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:20:35</td>   <td>775824</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.opsdata.B_004_viewSupportDetail@15def7ff]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:20:38</td>   <td>778065</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;SetUp.setUp()[pri:0, instance:dxy.vs.testcase.opsdata.B_006_viewOpsLog@70edb9a5]">&gt;&gt;setUp</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="a79177">  <td>15/06/23 12:20:41</td>   <td>781771</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="B_006_viewOpsLog.viewSupportDetail()[pri:0, instance:dxy.vs.testcase.opsdata.B_006_viewOpsLog@70edb9a5]">viewSupportDetail</td> 
+  <td>main@1677950221</td>   <td></td> </tr>
+<tr bgcolor="d5ff73">  <td>15/06/23 12:21:15</td>   <td>815898</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;SetUp.tearDown()[pri:0, instance:dxy.vs.testcase.opsdata.B_006_viewOpsLog@70edb9a5]">&lt;&lt;tearDown</td> 
+<td>&nbsp;</td>  <td>main@1677950221</td>   <td></td> </tr>
+</table>

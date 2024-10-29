@@ -1,0 +1,34 @@
+package dxy.vs.testcase.exam;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.Exam_ManageModePage;
+import dxy.vs.pages.Exam_ManageQuestionPage;
+
+public class F_01_manageMode extends SetUp{
+
+	
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	Exam_ManageModePage manageModePage;
+	Exam_ManageQuestionPage manageQuestionPage;
+	
+	@Test
+	public void manageMode() throws Exception{
+		
+		reusableFunctions= PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		manageModePage= PageFactory.initElements(threadDriver.get(), Exam_ManageModePage.class);
+		manageQuestionPage= PageFactory.initElements(threadDriver.get(), Exam_ManageQuestionPage.class);
+		
+		reusableFunctions.enterVS(0);
+		
+		manageModePage.openManageExamPage();
+//		manageModePage.createExam("答题", "1");
+		
+		manageQuestionPage.openManageQuestionPage();
+		manageQuestionPage.creatQuestion("多选", true, "1");
+	}
+}

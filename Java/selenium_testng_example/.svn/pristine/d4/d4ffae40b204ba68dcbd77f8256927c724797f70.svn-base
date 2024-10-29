@@ -1,0 +1,39 @@
+package dxy.vs.testcase.template;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.Template_AuditTemplatePage;
+import dxy.vs.pages.Template_SelectTemplatePage;
+
+public class D_05_selectTemplate extends SetUp{
+
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	Template_SelectTemplatePage selectTemplatePage;
+	Template_AuditTemplatePage auditTemplatePage;
+	
+	@Test
+	public void selectTemplateVerify() throws Exception{
+		
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		auditTemplatePage = PageFactory.initElements(threadDriver.get(), Template_AuditTemplatePage.class);
+		selectTemplatePage = PageFactory.initElements(threadDriver.get(), Template_SelectTemplatePage.class);
+		
+		reusableFunctions.login(0);
+		
+		auditTemplatePage.openAuditTemplatePage();
+		
+		auditTemplatePage.clearRequest();
+		
+		selectTemplatePage.openSelectTemplatePage();
+
+		selectTemplatePage.previewAColor();
+		
+		selectTemplatePage.submitATemplate();
+		
+		auditTemplatePage.verifySubmitRequst();
+	}
+}

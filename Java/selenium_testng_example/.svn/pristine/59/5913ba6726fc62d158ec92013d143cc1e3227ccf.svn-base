@@ -1,0 +1,30 @@
+package dxy.vs.testcase.opsdata;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.PageFactory;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.OpsViewHCPPage;
+
+public class B007_008_viewHCP extends SetUp{
+
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	OpsViewHCPPage opsViewHCPPage;
+	
+	@Test
+	public void viewSupportDetail() throws Exception{
+		
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		opsViewHCPPage = PageFactory.initElements(threadDriver.get(), OpsViewHCPPage.class);
+		
+		reusableFunctions.login();
+		
+		opsViewHCPPage.openOpsLogPage();
+		
+		reusableFunctions.verifyPaginations(opsViewHCPPage.content_table, opsViewHCPPage.btn_next, opsViewHCPPage.btn_previous, opsViewHCPPage.btn_last, opsViewHCPPage.btn_first);
+		
+	}
+	
+}

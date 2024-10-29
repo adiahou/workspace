@@ -1,0 +1,43 @@
+package dxy.vs.testcase.report;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.DashboardPage;
+import dxy.vs.pages.Report_CommonReportPage;
+import dxy.vs.pages.Report_CustomReportPage;
+
+public class A01_02_03_verifyReports extends SetUp{
+
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	DashboardPage dashboardPage;
+	Report_CommonReportPage commonReportPage;
+	Report_CustomReportPage customReportPage;
+	
+	@Test
+	public void opsDatePageDisplay() throws Exception{
+		
+		reusableFunctions = PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		dashboardPage = PageFactory.initElements(threadDriver.get(), DashboardPage.class);
+		commonReportPage = PageFactory.initElements(threadDriver.get(), Report_CommonReportPage.class);
+		customReportPage = PageFactory.initElements(threadDriver.get(), Report_CustomReportPage.class);
+		
+		
+		reusableFunctions.login(1);
+		
+		dashboardPage.selectLillySites();
+		
+		dashboardPage.verifyDashboardReports();
+		
+		commonReportPage.openCommonReportPage();
+		
+		commonReportPage.verifyCommonReports();
+		
+		customReportPage.openCommonReportPage();
+		
+		customReportPage.verifyCustomReport();
+	}
+}

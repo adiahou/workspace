@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false" thread-count="1"
+	configfailurepolicy="continue">
+
+	<listeners>
+		<listener class-name="dxy.vs.base.ScreenshotListener" />
+	</listeners>
+
+
+	<test name="VS-Back-Test">
+	<!--
+		<packages>
+		    	
+			<package name="dxy.vs.testcase.cms" /> 
+ 			<package name="dxy.vs.testcase.comment" />
+ 			<package name="dxy.vs.testcase.exam" />
+			<package name="dxy.vs.testcase.opsdata" />
+			<package name="dxy.vs.testcase.template" />
+			<package name="dxy.vs.testcase.report" />
+			<package name="dxy.vs.testcase.system" />  
+			
+		</packages>
+ -->
+		
+		<classes>	       
+			<class name="dxy.vs.testcase.cms.E23_to_27_manageMenu"></class>	  
+			<class name="dxy.vs.testcase.cms.E29_manageVideo"></class>	  
+			<class name="dxy.vs.testcase.cms.E4_5_6_manageContent"></class>	  
+			<class name="dxy.vs.testcase.comment.C_002_deleteComments"></class>	   
+			<class name="dxy.vs.testcase.exam.F_01_1_manageExam"></class>	  
+			<class name="dxy.vs.testcase.exam.F_01_2_manageSurvey"></class>	  
+			<class name="dxy.vs.testcase.exam.F_01_3_manageVote"></class>	  
+			<class name="dxy.vs.testcase.report.A01_02_03_verifyReports	"></class>	      
+			<class name="dxy.vs.testcase.system.H02_manageTargetHCP"></class>	  
+			<class name="dxy.vs.testcase.system.H04_manageTag"></class>	  
+			<class name="dxy.vs.testcase.system.H05_siteSource"></class>	  
+			<class name="dxy.vs.testcase.system.H06_permissionTest_1Empty"></class>	      
+			<class name="dxy.vs.testcase.system.H06_permissionTest_2ClientAdmin"></class>	   
+			<class name="dxy.vs.testcase.system.H06_permissionTest_3DXYAdmin"></class>	   
+			<class name="dxy.vs.testcase.system.H06_permissionTest_4Others"></class>	   
+			<class name="dxy.vs.testcase.template.D_05_selectTemplate"></class>	   
+			<class name="dxy.vs.testcase.template.D_06_manageColor"></class>	      
+			
+		</classes>
+		
+	</test>
+
+	
+</suite>

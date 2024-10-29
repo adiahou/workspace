@@ -1,0 +1,219 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import dxy.vs.base.SetUp;
+
+public class System_SiteSourcePage extends SetUp{
+	
+	@FindBy(xpath="//section[@class='content-header']/h1")
+	public WebElement pageTitle;
+	
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[1]")
+	public List<WebElement> values_name;
+	
+	@FindBy(xpath="//a[contains(text(),'新增')]")
+	public WebElement btn_new;
+	
+	@FindBy(xpath=".//*[@id='content_id']/option")
+	public List<WebElement> options_content;
+
+	@FindBy(xpath=".//*[@id='source']")
+	public WebElement field_sourceLink;
+
+	@FindBy(xpath=".//*[@id='source_type1']")
+	public WebElement field_source1;
+
+	@FindBy(xpath=".//*[@id='source_type2']")
+	public WebElement field_source2;
+
+	@FindBy(xpath=".//*[@id='source_type3']")
+	public WebElement field_source3;
+
+	@FindBy(xpath=".//*[@id='unit_price']")
+	public WebElement field_price;
+
+	@FindBy(xpath=".//*[@id='promote_start_date']")
+	public WebElement field_startDate;
+
+	@FindBy(xpath="//td[@class='day'][text()='1']")
+	public WebElement date_1st;
+
+	@FindBy(xpath=".//*[@id='promote_days']")
+	public WebElement field_promoteDays;
+
+	@FindBy(xpath=".//*[@id='sent_succeed']")
+	public WebElement field_successTimes;
+
+	@FindBy(xpath=".//*[@id='visit_times']")
+	public WebElement field_visitTimes;
+	
+	@FindBy(xpath=".//*[@id='click_times']")
+	public WebElement field_clickTimes;
+	
+	@FindBy(xpath=".//div[@class='box-body']/input[@id='submit']")
+	public WebElement btn_submit;
+	
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[2]")
+	public List<WebElement> values_link;
+	
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[3]")
+	public List<WebElement> values_source1;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[4]")
+	public List<WebElement> values_source2;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[5]")
+	public List<WebElement> values_source3;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[6]")
+	public List<WebElement> values_price;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[8]")
+	public List<WebElement> values_days;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[9]")
+	public List<WebElement> values_sentTimes;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[10]")
+	public List<WebElement> values_visiteTimes;
+
+	@FindBy(xpath=".//*[@id='project-list']/tbody/tr/td[11]")
+	public List<WebElement> values_clickTimes;
+	
+	@FindBy(xpath="//a[text()='删除']")
+	public List<WebElement> links_delete;
+	
+	@FindBy(xpath="//a[text()='编辑']")
+	public List<WebElement> links_edit;
+
+	
+	
+	public void openSiteSourcePage() throws Exception{		
+		String desiredRow = getNodeNo(values_name,"标准模板 Demo");
+		WebElement btn_source = driver.findElement(By.xpath(".//*[@id='project-list']/tbody/tr["+desiredRow+"]/td[4]/a[text()='渠道']"));
+		
+		btn_source.click();
+		waitForPageLoadComplete();
+		waitForElementExist(pageTitle);
+		
+		//验证页面显示
+		assertTrue("页面标题错误",pageTitle.getText().contains("渠道信息"));
+	}
+	
+	public void newSource() throws Exception{
+		btn_new.click();
+		waitForPageLoadComplete();
+		
+		//fillin all fields
+		options_content.get(1).click();
+		field_sourceLink.sendKeys("AutoTest_link");
+		field_source1.sendKeys("AutoTest_source1");
+		field_source2.sendKeys("AutoTest_source2");
+		field_source3.sendKeys("AutoTest_source3");
+		field_price.sendKeys("10");
+		field_startDate.click();
+		Thread.sleep(500);
+		date_1st.click();
+		field_promoteDays.sendKeys("3");
+		field_successTimes.sendKeys("100");
+		field_visitTimes.sendKeys("100");
+		field_clickTimes.sendKeys("100");
+		
+		//submit
+		btn_submit.click();
+		waitForPageLoadComplete();
+		
+		//verify if created
+		assertTrue("新建后未返回渠道信息列表页",pageTitle.getText().contains("渠道信息"));
+		boolean isCreated = false;
+		for(WebElement eachlink: values_link){
+			if(eachlink.getText().trim().equals("AutoTest_link")){
+				isCreated=true;
+				break;
+			}
+		}
+		Assert.assertTrue("渠道数据未创建成功。",isCreated);
+	}
+	
+	public void editSource() throws Exception{
+		//点击编辑链接
+		for(int i=0;i<values_link.size();i++){
+			if(values_link.get(i).getText().trim().equals("AutoTest_link")){
+				links_edit.get(i).click();
+				break;
+			}
+		}
+		waitForPageLoadComplete();
+		field_sourceLink.clear();
+		field_sourceLink.sendKeys("AutoTest_link_update");
+		field_source1.clear();
+		field_source1.sendKeys("AutoTest_source1_update");
+		field_source2.clear();
+		field_source2.sendKeys("AutoTest_source2_update");
+		field_source3.clear();
+		field_source3.sendKeys("AutoTest_source3_update");
+		field_price.clear();
+		field_price.sendKeys("11");
+		field_promoteDays.clear();
+		field_promoteDays.sendKeys("4");
+		field_successTimes.clear();
+		field_successTimes.sendKeys("101");
+		field_visitTimes.clear();
+		field_visitTimes.sendKeys("101");
+		field_clickTimes.clear();
+		field_clickTimes.sendKeys("101");
+		//submit
+		btn_submit.click();
+		waitForPageLoadComplete();
+		
+		String desiredRow = getNodeNo(values_link,"AutoTest_link_update");
+		int index = Integer.parseInt(desiredRow)-1;
+		Assert.assertTrue("渠道1未更新", values_source1.get(index).getText().trim().equals("AutoTest_source1_update"));
+		Assert.assertTrue("渠道2未更新", values_source2.get(index).getText().trim().equals("AutoTest_source2_update"));
+		Assert.assertTrue("渠道3未更新", values_source3.get(index).getText().trim().equals("AutoTest_source3_update"));
+		Assert.assertTrue("单价未更新", values_price.get(index).getText().trim().equals("11"));
+		Assert.assertTrue("推广天数未更新", values_days.get(index).getText().trim().equals("4"));
+		Assert.assertTrue("发送成功数未更新", values_sentTimes.get(index).getText().trim().equals("101"));
+		Assert.assertTrue("访问量未更新", values_visiteTimes.get(index).getText().trim().equals("101"));
+		Assert.assertTrue("点击量未更新", values_clickTimes.get(index).getText().trim().equals("101"));
+		
+	}
+	
+	public void clearOldDatas() throws Exception{
+		 for(WebElement eachValue: values_link){
+			 if(eachValue.getText().contains("AutoTest_link")){
+				 String linkValue = eachValue.getText().trim();
+				 deleteSourceData(linkValue);
+			 }
+		 }
+	}
+	
+	public void deleteSourceData(String sourceLink) throws Exception{
+		//点击删除链接
+		for(int i=0;i<values_link.size();i++){
+			if(values_link.get(i).getText().trim().contains(sourceLink)){
+				links_delete.get(i).click();
+				break;
+			}
+		}
+		Thread.sleep(1000);
+		clickFromAlert("yes");
+		Thread.sleep(1000);
+		waitForPageLoadComplete();
+		
+		//验证已删除
+		for(WebElement eachCode: values_link){
+			assertFalse("渠道数据："+eachCode.getText()+" 未被成功删除。", eachCode.getText().trim().equals(sourceLink));
+		}
+	}
+	
+}

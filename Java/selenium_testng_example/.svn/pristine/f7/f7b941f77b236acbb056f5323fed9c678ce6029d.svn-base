@@ -1,0 +1,99 @@
+package dxy.vs.testcase.exam;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import dxy.vs.base.ReusableFunctions;
+import dxy.vs.base.SetUp;
+import dxy.vs.pages.CMS_ManageContentPage;
+import dxy.vs.pages.Exam_ManageModePage;
+import dxy.vs.pages.Exam_ManageQuestionPage;
+import dxy.vs.pages.Front_Demo1Page;
+
+public class F_01_1_manageExam extends SetUp{
+
+	
+	//Initialize Pages
+	ReusableFunctions reusableFunctions;
+	Exam_ManageModePage manageModePage;
+	Exam_ManageQuestionPage manageQuestionPage;
+	CMS_ManageContentPage manageContentPage;
+	Front_Demo1Page demo1Page;
+	
+	String ExamUrl="";
+	
+	@Test
+	public void newExam() throws Exception{
+		reusableFunctions= PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		manageModePage= PageFactory.initElements(threadDriver.get(), Exam_ManageModePage.class);
+		manageQuestionPage= PageFactory.initElements(threadDriver.get(), Exam_ManageQuestionPage.class);
+		manageContentPage= PageFactory.initElements(threadDriver.get(), CMS_ManageContentPage.class);
+		demo1Page= PageFactory.initElements(threadDriver.get(), Front_Demo1Page.class);
+		
+		reusableFunctions.enterVS(0);
+		
+		manageModePage.openManageExamPage();
+		manageModePage.clearOldData();
+		String examTitle=manageModePage.createExam("答题");
+		
+		manageQuestionPage.openManageQuestionPage();
+		manageQuestionPage.clearOldData();
+		manageQuestionPage.creatQuestion("单选", true, "1","1",false);
+		manageQuestionPage.creatQuestion("单选", false, "1","2",false);
+		manageQuestionPage.creatQuestion("多选", true, "1,2","3",false);
+		manageQuestionPage.creatQuestion("多选", false, "3,4","4",false);
+		
+		manageContentPage.openContentManagePage();
+		ExamUrl = manageContentPage.newExamContent(examTitle);
+		demo1Page.verifyExam(ExamUrl, true, true, true,true,false);
+	}
+	
+	@Test
+	(dependsOnMethods = {"newExam"})
+	public void updateExam() throws Exception{
+		reusableFunctions= PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		manageModePage= PageFactory.initElements(threadDriver.get(), Exam_ManageModePage.class);
+		demo1Page= PageFactory.initElements(threadDriver.get(), Front_Demo1Page.class);
+		
+		reusableFunctions.enterVS(0);
+		
+		manageModePage.openManageExamPage();
+		manageModePage.updateExam(false,false,false,true);
+		
+		demo1Page.verifyExam(ExamUrl, false, false, false,true,false);
+	}
+	
+	@Test
+	(dependsOnMethods = {"updateExam"})
+	public void disableExam() throws Exception{
+		reusableFunctions= PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		manageModePage= PageFactory.initElements(threadDriver.get(), Exam_ManageModePage.class);
+		demo1Page= PageFactory.initElements(threadDriver.get(), Front_Demo1Page.class);
+		
+		reusableFunctions.enterVS(0);
+		
+		manageModePage.openManageExamPage();
+		manageModePage.updateExam(false,false,false,false);
+		
+		demo1Page.verifyExam(ExamUrl, false, false, false, false,false);
+	}
+	
+	@Test
+	(dependsOnMethods = {"disableExam"})
+	public void deleteExam() throws Exception{
+		reusableFunctions= PageFactory.initElements(threadDriver.get(), ReusableFunctions.class);
+		manageModePage= PageFactory.initElements(threadDriver.get(), Exam_ManageModePage.class);
+		manageQuestionPage= PageFactory.initElements(threadDriver.get(), Exam_ManageQuestionPage.class);
+		manageContentPage= PageFactory.initElements(threadDriver.get(), CMS_ManageContentPage.class);
+		
+		reusableFunctions.enterVS(0);
+		manageModePage.openManageExamPage();
+		manageModePage.clearOldData();
+		
+		manageQuestionPage.openManageQuestionPage();
+		manageQuestionPage.clearOldData();
+		
+		manageContentPage.openContentManagePage();
+		manageContentPage.clearOldData();
+	}
+}

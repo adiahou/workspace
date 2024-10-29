@@ -1,0 +1,91 @@
+package dxy.vs.pages;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import dxy.vs.base.SetUp;
+
+public class DashboardPage extends SetUp{
+
+	@FindBy(xpath="//*[text()='Dashboard']")
+	public WebElement text_dashboard;
+
+	@FindBy(xpath="//div[@class='label bg-light-blue']")
+	public List<WebElement> selectedSites;
+
+	@FindBy(xpath="//a[contains(@class,'sidebar-toggle')]")
+	public WebElement btn_selectSiteExpand;
+
+	@FindBy(xpath="//input[@type='checkbox']")
+	public List<WebElement> checkBoxes_site;
+
+	@FindBy(xpath="//input[@type='checkbox'][@value='1']")
+	public WebElement checkBox_lilly;
+	
+	@FindBy(xpath="//label[contains(text(),'标准模板 Demo')]/input[@type='checkbox']")
+	public WebElement checkBoxes_demo;
+
+	@FindBy(xpath=".//*[@id='submit']")
+	public WebElement btn_submit;
+
+	@FindBy(xpath=".//*[@id='hcp-visit']/div/canvas[6]")
+	public WebElement report_TPCompleted;
+
+	@FindBy(xpath=".//*[@id='hcp-completed-month']/div/canvas[8]")
+	public WebElement report_TargetTP;
+
+	@FindBy(xpath=".//*[@id='hcp-number']/div/canvas[6]")
+	public WebElement report_HCPCompleted;
+
+	@FindBy(xpath=".//*[@id='hcp-engaged-month']/div/canvas[8]")
+	public WebElement report_TargetHCP;
+
+	@FindBy(xpath=".//*[@id='tp-map']/div/canvas[9]")
+	public WebElement report_TPMap;
+	
+	
+	public void selectDemoSite() throws Exception{
+		
+		boolean isDemoOnly = selectedSites.size()==1&selectedSites.get(0).getText().contains("标准模板 Demo");
+		if(!isDemoOnly){
+			btn_selectSiteExpand.click();
+			Thread.sleep(1000);
+			//uncheck each checkbox
+			for(WebElement eachCheckbox: checkBoxes_site){
+				if(isCheckboxChecked(eachCheckbox)){
+					System.out.println("uncheck action");
+					eachCheckbox.click();
+					Thread.sleep(500);
+				}
+			}
+			//check demo site
+			checkBoxes_demo.click();
+			assertTrue("标准模板未被选中",isCheckboxChecked(checkBoxes_demo));
+			
+			btn_submit.click();
+			waitForPageLoadComplete();
+		}
+	}
+	
+	public void selectLillySites() throws Exception{
+		btn_selectSiteExpand.click();
+		Thread.sleep(1000);
+		if(!isCheckboxChecked(checkBox_lilly)){
+			checkBox_lilly.click();
+			btn_submit.click();
+			waitForPageLoadComplete();
+		}
+	}
+	
+	public void verifyDashboardReports(){
+		assertTrue("Dashboard - TP Completed 报表未显示",isElementExist(report_TPCompleted));
+		assertTrue("Dashboard - Target HCP TP 报表未显示",isElementExist(report_TargetTP));
+		assertTrue("Dashboard - HCP Completed 报表未显示",isElementExist(report_HCPCompleted));
+		assertTrue("Dashboard - Target HCP 报表未显示",isElementExist(report_TargetHCP));
+		assertTrue("Dashboard - TP Map 报表未显示",isElementExist(report_TPMap));
+	}
+}
