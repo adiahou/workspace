@@ -1,0 +1,29 @@
+{
+  "name": "cypress_example",
+  "version": "1.0.0",
+  "description": "This is a code example for cypress",
+  "devDependencies": {
+    "cypress": "^13.15.1"
+  },
+  "author": "adiahou",
+  "license": "ISC",
+  "scripts": {
+    "delete:reports": "rm cypress/results/* || true",
+    "combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/*.xml\"",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "postreport": "npm run combine:reports",
+
+    "precyrun": "export HTTP_PROXY=http://127.0.0.1:26001  export HTTPS_PROXY=http://127.0.0.1:26001",
+    "cyrun": "cypress run",
+    "precyopen": "export HTTP_PROXY=http://127.0.0.1:26001  export HTTPS_PROXY=http://127.0.0.1:26001",
+    "cyopen": "cypress open --browser chrome"
+  },
+  "cypress": {
+    "baseUrl": "",
+    "video": false
+  },
+  "dependencies": {
+    "mochawesome": "^7.1.3"
+  }
+}
